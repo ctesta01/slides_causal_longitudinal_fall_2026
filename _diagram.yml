@@ -1,0 +1,32 @@
+diagram:
+  cache: true
+  cache-dir: ./tikz-cache
+  engine:
+    tikz:
+      execpath: lualatex
+      header-includes:
+        - '\usepackage{libertine}'
+        - '\usepackage{libertinust1math}'
+        - '\usepackage{amsmath, amssymb, bm}'
+        - '\usetikzlibrary{arrows.meta, positioning, calc, backgrounds, shapes.multipart, fit, decorations.pathreplacing}'
+        - '\definecolor{trtcol}{RGB}{0,102,204}'
+        - '\definecolor{covcol}{RGB}{34,139,34}'
+        - '\definecolor{outcol}{RGB}{120,30,160}'
+        - '\definecolor{confcol}{RGB}{200,60,30}'
+        - '\definecolor{intcol}{RGB}{230,120,0}'
+        - '\definecolor{ghost}{RGB}{170,170,170}'
+        - |
+          \tikzset{
+            rv/.style   ={inner sep=2pt, font=\normalsize},
+            arr/.style  ={-{Latex[length=2.4mm]}, semithick},
+            confarr/.style ={arr, confcol},
+            cut/.style  ={-{Latex[length=2.4mm]}, semithick, ghost, dashed},
+            hi/.style   ={arr, intcol, very thick},
+            boxed/.style={draw, rounded corners=2pt, inner sep=3pt},
+            swig/.style ={draw, rectangle split, rectangle split parts=2,
+                          rectangle split horizontal, rounded corners=3pt,
+                          inner sep=3.5pt, font=\normalsize},
+            note/.style ={font=\footnotesize, align=center},
+          }
+        - '\newcommand{\Ybar}[1]{Y^{#1}}'
+        - '\newcommand{\ol}[1]{\overline{#1}}'
